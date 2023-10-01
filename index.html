@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Многопользовательский чат</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Чат</title>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h1>Многопользовательский чат</h1>
-        </div>
-        <div class="chat-messages">
-            <ul id="message-list">
-                <!-- Сюда будут добавляться сообщения -->
-            </ul>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Введите сообщение...">
-            <button id="send-button">Отправить</button>
-        </div>
+  <div class="container">
+    <h1>Добро пожаловать в чат</h1>
+    <div>
+      <input type="text" id="username" class="input-field" placeholder="Введите ваш никнейм">
+      <input type="password" id="password" class="input-field" placeholder="Введите пароль">
+      <button id="login-btn">Войти</button>
     </div>
-    <script src="script.js"></script>
+    <div>
+      <input type="text" id="message" class="input-field" placeholder="Введите сообщение">
+      <button id="send-btn">Отправить</button>
+    </div>
+    <ul id="chat-messages"></ul>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
 </body>
 </html>
