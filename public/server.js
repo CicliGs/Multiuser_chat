@@ -5,10 +5,11 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+const path = require('path');
 
 const users = {}; // Сохранение списка пользователей
 
-app.use(express.static(__dirname + '/public'));
+app.use('/other-directory', express.static(path.join(__dirname, 'other-directory')));
 
 io.on('connection', (socket) => {
   console.log('Пользователь подключился');
